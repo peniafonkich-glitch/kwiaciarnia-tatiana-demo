@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kwiaciarnia u Tatiany, pracownia florystyczna, Wolsztyn</title>
+<meta name="description" content="Kwiaciarnia u Tatiany w Wolsztynie. Florystyka ślubna, bukiety okolicznościowe, kwiaty doniczkowe i aranżacje, wieńce i wiązanki.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --plum: #25102B;
+    --plum-2: #341A3C;
+    --peony: #FF7C6E;
+    --peony-dk: #E2594B;
+    --sage: #8FB49A;
+    --ivory: #FBEFE4;
+    --muted: #D4BFC9;
+    --head: "Bodoni Moda", Georgia, serif;
+    --body: "Hanken Grotesk", system-ui, sans-serif;
+    --gut: clamp(18px, 5vw, 72px);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--plum); color: var(--ivory); font: 400 18px/1.65 var(--body); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+  h1, h2, h3, p, ul, dl, dd, fieldset { margin: 0; padding: 0; border: 0; }
+  ul { list-style: none; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--sage); outline-offset: 3px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--peony); color: #1d0b16; padding: 10px 16px; z-index: 50; }
+  .skip:focus { left: 8px; }
+
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px var(--gut); }
+  .mark { font: italic 500 26px/1 var(--head); text-decoration: none; }
+  .btn { display: inline-block; padding: 14px 26px; border: 0; border-radius: 999px; background: var(--peony); color: #1d0b16; font: 700 17px/1.1 var(--body); text-decoration: none; cursor: pointer; transition: background-color .2s, transform .15s; }
+  .btn:hover { background: var(--ivory); }
+  .btn:active { transform: scale(.97); }
+  .btn.ghost { background: transparent; color: var(--ivory); box-shadow: inset 0 0 0 2px rgba(251, 239, 228, .55); }
+  .btn.ghost:hover { background: var(--ivory); color: var(--plum); }
+
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(8px, 3vw, 48px); align-items: center; padding: clamp(12px, 3vw, 36px) var(--gut) clamp(40px, 7vw, 100px); }
+  h1 { font: 500 clamp(46px, 7.4vw, 108px)/.98 var(--head); }
+  h1 em { display: block; color: var(--peony); }
+  .lead { margin-top: 24px; max-width: 29em; font-size: clamp(18px, 1.9vw, 22px); }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .stage { position: relative; aspect-ratio: 1 / 1.08; }
+  .stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: none; cursor: pointer; }
+  .stage.has3d canvas { display: block; }
+  .fbv { position: absolute; left: 30%; right: 30%; bottom: 10%; height: 34%; border-radius: 12px 12px 40% 40%; background: #2F5D50; }
+  .fbv::before { content: ""; position: absolute; left: -40%; right: -40%; bottom: 80%; height: 130%; border-radius: 50%; background: radial-gradient(circle at 35% 40%, var(--peony), #8a2d4a 70%); }
+  .has3d .fbv { display: none; }
+  .hint { position: absolute; right: 0; bottom: 0; font-size: 15px; color: var(--muted); }
+
+  section { padding: clamp(44px, 7vw, 100px) var(--gut); }
+  h2 { font: 500 clamp(32px, 4.8vw, 62px)/1.05 var(--head); }
+  h2 em { color: var(--peony); }
+
+  /* Spis usług jak w katalogu florysty */
+  .offer { margin-top: 34px; border-top: 1px solid rgba(251, 239, 228, .28); }
+  .offer li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 8px clamp(20px, 5vw, 72px); align-items: baseline; padding: clamp(18px, 2.6vw, 32px) 0; border-bottom: 1px solid rgba(251, 239, 228, .28); transition: padding .3s; }
+  .offer li:hover { padding-left: 18px; }
+  .offer h3 { font: italic 500 clamp(26px, 3.6vw, 46px)/1.08 var(--head); }
+  .offer p { color: var(--muted); }
+  .offer .quiet h3 { font-size: clamp(22px, 2.8vw, 34px); color: var(--muted); }
+  @media (max-width: 760px) { .offer li { grid-template-columns: 1fr; } }
+
+  /* Zapytanie: nastrój kolorystyczny zmienia też bukiet */
+  .order { background: var(--plum-2); }
+  .oform { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 22px; margin-top: 28px; max-width: 900px; }
+  .fld { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .fld.wide { grid-column: 1 / -1; }
+  .fld > label, .fld > legend { font-weight: 700; padding: 0; }
+  .fld input, .fld select, .fld textarea { width: 100%; padding: 13px 14px; border-radius: 12px; border: 2px solid rgba(251, 239, 228, .3); background: var(--plum); color: var(--ivory); font: 400 17px/1.4 var(--body); }
+  .fld input:focus, .fld select:focus, .fld textarea:focus { border-color: var(--peony); outline: none; box-shadow: 0 0 0 3px rgba(255, 124, 110, .35); }
+  .fld small { color: var(--muted); font-size: 14px; }
+  .moods { display: flex; flex-wrap: wrap; gap: 10px; }
+  .moods label { cursor: pointer; position: relative; }
+  .moods input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+  .moods span { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 999px; box-shadow: inset 0 0 0 2px rgba(251, 239, 228, .35); transition: background-color .2s, box-shadow .2s; }
+  .moods i { width: 18px; height: 18px; border-radius: 50%; background: var(--c); box-shadow: 0 0 0 2px rgba(255, 255, 255, .5); }
+  .moods input:checked + span { background: var(--peony); color: #1d0b16; box-shadow: none; }
+  .moods input:focus-visible + span { outline: 3px solid var(--sage); outline-offset: 3px; }
+  .err { color: #FFC2BA; min-height: 1.4em; font-weight: 600; }
+  .out { margin-top: 30px; max-width: 900px; padding: 24px clamp(18px, 3vw, 32px); border-radius: 18px; background: var(--plum); box-shadow: inset 0 0 0 2px rgba(143, 180, 154, .7); }
+  .out h3 { font: 500 28px/1.1 var(--head); }
+  .out pre { margin: 14px 0 0; white-space: pre-wrap; font: 400 17px/1.55 var(--body); }
+  .out .row { margin-top: 18px; }
+  @media (max-width: 600px) { .oform { grid-template-columns: 1fr; } }
+
+  .info { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(24px, 6vw, 90px); align-items: start; }
+  dl.f { display: grid; grid-template-columns: max-content 1fr; gap: 14px 28px; margin-top: 28px; }
+  dl.f dt { color: var(--muted); }
+  dl.f dd { min-width: 0; overflow-wrap: anywhere; }
+  dl.f a { text-underline-offset: 4px; }
+  .map { border-radius: 18px; overflow: hidden; border: 3px solid var(--sage); aspect-ratio: 4 / 3; background: #444; }
+  .map iframe { display: block; width: 100%; height: 100%; border: 0; filter: saturate(.85); }
+  .ml { margin-top: 12px; font-size: 16px; color: var(--muted); }
+
+  footer { padding: 34px var(--gut) 56px; background: #170A1C; color: var(--muted); font-size: 15px; }
+  footer p { max-width: 64em; }
+  footer p + p { margin-top: 8px; }
+
+  @media (max-width: 860px) { .hero, .info { grid-template-columns: 1fr; } .stage { max-width: 520px; width: 100%; margin-inline: auto; } }
+  @media (max-width: 560px) { dl.f { grid-template-columns: 1fr; gap: 2px 0; } dl.f dd { margin-bottom: 16px; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .offer li { transition: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Przejdź do treści</a>
+<header>
+  <a class="mark" href="#top">u Tatiany</a>
+  <a class="btn" href="tel:+48693565917">693 565 917</a>
+</header>
+
+<main id="main">
+  <div class="hero" id="top">
+    <div>
+      <h1>Kwiaciarnia <em>u Tatiany</em></h1>
+      <p class="lead">Pracownia florystyczna w Wolsztynie. Proste i ekskluzywne dekoracje, bukiety na każdą okazję, kwiaty doniczkowe i oprawa florystyczna wesel.</p>
+      <div class="row">
+        <a class="btn" href="#zapytanie">Zapytaj o bukiet</a>
+        <a class="btn ghost" href="tel:+48693565917">Zadzwoń</a>
+      </div>
+    </div>
+    <div class="stage" id="stage-box">
+      <div class="fbv" aria-hidden="true"></div>
+      <canvas id="stage" role="img" aria-label="Trójwymiarowy bukiet kwiatów w wazonie, który rozkwita po kliknięciu"></canvas>
+      <p class="hint" aria-hidden="true">Kliknij bukiet, a rozkwitnie</p>
+    </div>
+  </div>
+
+  <section aria-labelledby="oferta">
+    <h2 id="oferta">Co robimy <em>z kwiatami</em></h2>
+    <ul class="offer">
+      <li><h3>Wesela</h3><p>Kompleksowa obsługa florystyczna uroczystości weselnych.</p></li>
+      <li><h3>Bukiety okolicznościowe</h3><p>Bukiety na każdą okazję.</p></li>
+      <li><h3>Rośliny w doniczkach</h3><p>Duży wybór kwiatów doniczkowych i aranżacji.</p></li>
+      <li class="quiet"><h3>Wieńce i wiązanki</h3><p>Wieńce, wiązanki, dekoracje, trumien i urn. Na życzenie dostarczamy wieńce na cmentarz, do kaplicy lub kościoła.</p></li>
+    </ul>
+  </section>
+
+  <section class="order" id="zapytanie" aria-labelledby="zap">
+    <h2 id="zap">Zapytaj o bukiet <em>w dwie minuty</em></h2>
+    <p style="margin-top:14px;max-width:38em;color:var(--muted)">Wybierz okazję i nastrój kolorów, a bukiet obok zmieni barwy. Cenę i skład ustali pracownia po Twoim zapytaniu.</p>
+    <form id="oform" class="oform" novalidate>
+      <div class="fld"><label for="o-kind">Okazja</label>
+        <select id="o-kind"><option>Bukiet okolicznościowy</option><option>Oprawa florystyczna wesela</option><option>Kwiaty doniczkowe lub aranżacja</option><option>Wieniec lub wiązanka</option><option>Dekoracja uroczystości</option></select></div>
+      <div class="fld"><label for="o-date">Kiedy potrzebujesz</label><input id="o-date" type="date"><small>Najlepiej zgłosić się z wyprzedzeniem, zwłaszcza przy ślubie.</small></div>
+      <fieldset class="fld wide"><legend>Nastrój kolorów</legend>
+        <div class="moods" id="moods">
+          <label><input type="radio" name="mood" value="Biel i zieleń" data-p="white" checked><span><i style="--c:#F4EADD"></i>Biel i zieleń</span></label>
+          <label><input type="radio" name="mood" value="Róż i brzoskwinia" data-p="blush"><span><i style="--c:#EE9DB2"></i>Róż i brzoskwinia</span></label>
+          <label><input type="radio" name="mood" value="Czerwień i bordo" data-p="burgundy"><span><i style="--c:#B3203F"></i>Czerwień i bordo</span></label>
+          <label><input type="radio" name="mood" value="Fiolet i lawenda" data-p="violet"><span><i style="--c:#8E6BC7"></i>Fiolet i lawenda</span></label>
+          <label><input type="radio" name="mood" value="Polne, kolorowe" data-p="wild"><span><i style="--c:#F2C94C"></i>Polne, kolorowe</span></label>
+        </div>
+      </fieldset>
+      <div class="fld wide"><label for="o-idea">Opis i pomysł</label><textarea id="o-idea" rows="3" placeholder="Np. bukiet dla mamy na urodziny, ślub w kościele, dekoracja sali"></textarea></div>
+      <div class="fld"><label for="o-name">Imię</label><input id="o-name" type="text" autocomplete="given-name"></div>
+      <div class="fld"><label for="o-tel">Telefon</label><input id="o-tel" type="tel" autocomplete="tel" inputmode="tel"></div>
+      <div class="fld wide"><button class="btn" type="submit">Przygotuj zapytanie</button><p id="o-err" class="err" role="alert"></p></div>
+    </form>
+    <div id="o-out" class="out" hidden aria-live="polite">
+      <h3>Twoje zapytanie</h3>
+      <pre id="o-text"></pre>
+      <div class="row">
+        <a class="btn" id="o-mail" href="#">Wyślij e-mailem</a>
+        <a class="btn ghost" href="tel:+48693565917">Zadzwoń: 693 565 917</a>
+        <button type="button" class="btn ghost" id="o-copy">Skopiuj tekst</button>
+      </div>
+      <p style="margin-top:14px;color:var(--muted)">To makieta: zapytanie nigdzie jeszcze nie poszło. Wybierz e-mail albo zadzwoń.</p>
+    </div>
+  </section>
+
+  <section class="info" id="kontakt" aria-labelledby="gdzie">
+    <div>
+      <h2 id="gdzie">Gdzie nas <em>znajdziesz</em></h2>
+      <dl class="f">
+        <dt>Adres</dt><dd>ul. Krótka 1<br>64-200 Wolsztyn</dd>
+        <dt>Telefon</dt><dd><a href="tel:+48693565917">693 565 917</a></dd>
+        <dt>E-mail</dt><dd><a href="mailto:kwiaciarnia.u.tatiany@wp.pl">kwiaciarnia.u.tatiany@wp.pl</a></dd>
+        <dt>Godziny</dt><dd>zadzwoń i potwierdź przed wizytą</dd>
+      </dl>
+    </div>
+    <div>
+      <div class="map">
+        <iframe title="Mapa: Kwiaciarnia u Tatiany, ul. Krótka 1, Wolsztyn" loading="lazy" referrerpolicy="no-referrer" src="https://www.openstreetmap.org/export/embed.html?bbox=16.1081%2C52.1138%2C16.1141%2C52.1166&amp;layer=mapnik&amp;marker=52.116408%2C16.113129"></iframe>
+      </div>
+      <p class="ml">Otwórz w: <a href="https://www.google.com/maps/search/?api=1&amp;query=52.116408,16.113129" target="_blank" rel="noopener">Google Maps</a>, <a href="https://www.openstreetmap.org/?mlat=52.116408&amp;mlon=16.113129#map=18/52.116408/16.113129" target="_blank" rel="noopener">OpenStreetMap</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>To makieta strony przygotowana jako propozycja dla kwiaciarni. Nie jest oficjalną stroną Kwiaciarni u Tatiany. Zakres usług, adres, telefon i e-mail pochodzą z obecnej strony kwiaciarni. Adres i godziny do potwierdzenia z właścicielką.</p>
+  <p>Zdjęcia z obecnej strony nie zostały użyte. Bukiet to ilustracja 3D.</p>
+</footer>
+
+<script>
+  // Zapytanie przez e-mail lub telefon, bez serwera
+  const $ = id => document.getElementById(id);
+  const date = $('o-date');
+  const d = new Date(); d.setDate(d.getDate() + 1); date.min = d.toISOString().slice(0, 10); date.value = date.min;
+  document.querySelectorAll('#moods input').forEach(r => r.addEventListener('change', () => { if (window.setBouquet) window.setBouquet(r.dataset.p); }));
+  $('oform').addEventListener('submit', e => {
+    e.preventDefault(); const err = $('o-err'); err.textContent = '';
+    const name = $('o-name').value.trim(), tel = $('o-tel').value.trim();
+    if (!date.value || date.value < date.min) { err.textContent = 'Wybierz datę od jutra.'; return; }
+    if (name.length < 2) { err.textContent = 'Wpisz imię.'; return; }
+    if (tel.replace(/\D/g, '').length < 9) { err.textContent = 'Wpisz numer telefonu, żeby kwiaciarnia mogła oddzwonić.'; return; }
+    const mood = document.querySelector('#moods input:checked').value, kind = $('o-kind').value;
+    const text = ['Dzień dobry, proszę o wycenę.', '', `Okazja: ${kind}`, `Termin: ${date.value}`, `Kolory: ${mood}`, `Opis i pomysł: ${$('o-idea').value.trim() || 'do ustalenia'}`, '', `Imię: ${name}`, `Telefon: ${tel}`].join('\n');
+    $('o-text').textContent = text;
+    $('o-mail').href = 'mailto:kwiaciarnia.u.tatiany@wp.pl?subject=' + encodeURIComponent('Zapytanie: ' + kind) + '&body=' + encodeURIComponent(text);
+    $('o-out').hidden = false; $('o-out').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+  $('o-copy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText($('o-text').textContent); $('o-copy').textContent = 'Skopiowano'; setTimeout(() => { $('o-copy').textContent = 'Skopiuj tekst'; }, 1800); } catch (er) { /* schowek niedostępny */ }
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(() => {
+  if (!window.THREE) return;
+  const canvas = document.getElementById('stage'), box = document.getElementById('stage-box');
+  const mq = matchMedia('(prefers-reduced-motion: reduce)'); let still = mq.matches;
+  let renderer; try { renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true }); } catch (e) { return; }
+  box.classList.add('has3d');
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2)); renderer.outputEncoding = THREE.sRGBEncoding;
+  const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(30, .93, .1, 100); camera.position.set(0, 3.2, 14.5); camera.lookAt(0, 2.4, 0);
+  scene.add(new THREE.HemisphereLight(0xfff0e6, 0x4a2a52, .9));
+  const key = new THREE.DirectionalLight(0xffffff, 1.1); key.position.set(4, 7, 6); scene.add(key);
+  const rim = new THREE.PointLight(0xff7c6e, .8, 30); rim.position.set(-5, 2, 3); scene.add(rim);
+  const lin = hex => new THREE.Color(hex).convertSRGBToLinear();
+  const col = (hex, r = .5, m = 0) => new THREE.MeshStandardMaterial({ color: lin(hex), roughness: r, metalness: m });
+
+  const group = new THREE.Group(); scene.add(group);
+  // Wazon (toczony profil)
+  const prof = [[0, 0], [.7, 0], [.95, .15], [1.2, .7], [1.1, 1.5], [.78, 2.0], [.72, 2.3], [.84, 2.45], [.72, 2.5], [0, 2.4]].map(([x, y]) => new THREE.Vector2(x, y));
+  const vase = new THREE.Mesh(new THREE.LatheGeometry(prof, 64), new THREE.MeshStandardMaterial({ color: lin(0x2f5d50), roughness: .22, metalness: .1, side: THREE.DoubleSide })); group.add(vase);
+  const bouquet = new THREE.Group(); bouquet.position.y = 2.2; group.add(bouquet);
+
+  // Liście z eukaliptusa i zieleni
+  const leafMat = [col(0x7fa88a, .6), col(0x5f8d6e, .6), col(0x9bbfa5, .6)];
+  const leafG = new THREE.SphereGeometry(1, 14, 10);
+  for (let i = 0; i < 22; i++) {
+    const a = i / 22 * Math.PI * 2 + (i % 2) * .2, lean = .55 + (i % 5) * .13, len = 1.7 + (i % 4) * .35;
+    const l = new THREE.Mesh(leafG, leafMat[i % 3]); l.scale.set(.2, len / 2, .06);
+    const r = Math.sin(lean) * len / 2 * 1.15, h = Math.cos(lean) * len / 2;
+    l.position.set(Math.cos(a) * r, h * .9 + .2, Math.sin(a) * r); l.rotation.z = -Math.cos(a) * lean; l.rotation.x = Math.sin(a) * lean; bouquet.add(l);
+  }
+
+  // Kwiaty: warstwy płatków, kolory wymieniane po wyborze nastroju
+  const PAL = {
+    white: [['#FFF7EE', '#EADFCF'], ['#F6EBDD', '#D9CDB9'], ['#E7F0DC', '#A8C7A6'], ['#FFF7EE', '#EADFCF'], ['#F6EBDD', '#D9CDB9'], ['#E7F0DC', '#A8C7A6'], ['#FFF7EE', '#EADFCF']],
+    blush: [['#FBC8D5', '#E58BA5'], ['#FFD9C0', '#F0A07B'], ['#FBE4DF', '#E6AFA9'], ['#F4A9BD', '#D96E8C'], ['#FFD9C0', '#F0A07B'], ['#FBC8D5', '#E58BA5'], ['#FBE4DF', '#E6AFA9']],
+    burgundy: [['#D12849', '#7A0F27'], ['#9B1230', '#560A1B'], ['#E0455B', '#A8182F'], ['#7B0F26', '#430812'], ['#D12849', '#7A0F27'], ['#C0334D', '#6D1022'], ['#9B1230', '#560A1B']],
+    violet: [['#C9B4EC', '#8E6BC7'], ['#E4D8F6', '#B7A0DE'], ['#9B7AD3', '#5E3E99'], ['#C9B4EC', '#8E6BC7'], ['#EADFF8', '#B79BE0'], ['#9B7AD3', '#5E3E99'], ['#E4D8F6', '#B7A0DE']],
+    wild: [['#F7DB6A', '#E3B52B'], ['#FFFFFF', '#E9E1D2'], ['#9DBCE6', '#5F87C4'], ['#F6A4BB', '#E0688A'], ['#F7DB6A', '#E3B52B'], ['#FFFFFF', '#E9E1D2'], ['#9DBCE6', '#5F87C4']]
+  };
+  const petalG = new THREE.SphereGeometry(1, 16, 12);
+  const spots = [[0, 2.05, 0, 1.4], [1.2, 1.65, .25, 1.2], [-1.15, 1.7, -.1, 1.2], [.5, 1.4, 1.1, 1.1], [-.5, 1.45, -1.05, 1.1], [.85, 1.55, -.95, 1.0], [-.9, 1.55, .9, 1.0]];
+  const flowers = spots.map(([x, y, z, s], fi) => {
+    const f = new THREE.Group(); f.position.set(x, y, z); f.lookAt(x * 2.4, y * 2 + 1.5, z * 2.4); f.rotateX(Math.PI / 2); // twarz kwiatu (oś Y) skierowana na zewnątrz
+    const rings = [], base = [];
+    for (let r = 0; r < 5; r++) {
+      const mat = new THREE.MeshStandardMaterial({ color: lin('#ffffff'), roughness: .55 }); rings.push(mat);
+      const count = 6 + r * 2, rad = (.07 + r * .1) * s, tilt = .95 - r * .2;
+      for (let i = 0; i < count; i++) {
+        const a = i / count * Math.PI * 2 + r * .5, p = new THREE.Mesh(petalG, mat);
+        p.scale.set(.19 * s + r * .04, .1 * s, .3 * s + r * .045);
+        p.position.set(Math.cos(a) * rad, (4 - r) * .06 * s, Math.sin(a) * rad);
+        p.rotation.set(Math.sin(a) * tilt, -a, -Math.cos(a) * tilt); f.add(p);
+      }
+    }
+    const heart = new THREE.Mesh(new THREE.SphereGeometry(.09 * s, 12, 10), col(0xd9b15c, .4, .5)); heart.position.y = .06 * s; f.add(heart);
+    bouquet.add(f); f.userData = { rings, born: 1, fi }; return f;
+  });
+  function setBouquet(name) {
+    const pal = PAL[name] || PAL.white;
+    flowers.forEach((f, i) => {
+      const [a, b] = pal[i % pal.length], ca = new THREE.Color(a), cb = new THREE.Color(b);
+      f.userData.rings.forEach((m, r) => { m.color.copy(ca).lerp(cb, r / 4).convertSRGBToLinear(); });
+    });
+  }
+  window.setBouquet = setBouquet; setBouquet('white');
+
+  // Rozkwitanie po kliknięciu: każdy kwiat rośnie z krótkim opóźnieniem
+  let bloomT = -1, t0 = 0, vis = false, raf = 0; const ptr = { x: 0, y: 0 };
+  canvas.addEventListener('click', () => { bloomT = 0; });
+  addEventListener('pointermove', e => { ptr.x = e.clientX / innerWidth * 2 - 1; ptr.y = e.clientY / innerHeight * 2 - 1; }, { passive: true });
+  mq.addEventListener('change', e => { still = e.matches; sync(); });
+  const ease = x => 1 - Math.pow(1 - x, 3) * Math.cos(x * 7);
+  function frame(t) {
+    const dt = Math.min(Math.max((t - t0) / 1000, 0), .05); t0 = t;
+    if (bloomT >= 0) { bloomT += dt; if (bloomT > 2.6) bloomT = -1; }
+    flowers.forEach((f, i) => {
+      let s = 1;
+      if (bloomT >= 0) { const k = Math.min(Math.max((bloomT - i * .12) / .9, 0), 1); s = .25 + .75 * ease(k); }
+      f.scale.setScalar(s);
+    });
+    if (!still) group.rotation.y += dt * .28;
+    group.rotation.z = still ? 0 : Math.sin(t / 1800) * .02;
+    camera.position.x += ((ptr.x * 1.4) - camera.position.x) * .05; camera.position.y += ((3.2 - ptr.y * 1.0) - camera.position.y) * .05; camera.lookAt(0, 2.4, 0);
+    renderer.render(scene, camera);
+  }
+  const loop = t => { frame(t); raf = requestAnimationFrame(loop); };
+  function sync() { cancelAnimationFrame(raf); if (vis && !still) raf = requestAnimationFrame(loop); else frame(performance.now()); }
+  function size() { const w = canvas.clientWidth, h = canvas.clientHeight; if (!w || !h) return; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); if (!vis || still) frame(performance.now()); }
+  new ResizeObserver(size).observe(canvas);
+  new IntersectionObserver(([e]) => { vis = e.isIntersecting; sync(); }).observe(canvas);
+  size();
+})();
+</script>
+</body>
+</html>
